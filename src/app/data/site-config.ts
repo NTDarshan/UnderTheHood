@@ -16,6 +16,6 @@ export const siteConfig: SiteConfig = {
   role: 'Full-Stack Developer → Backend & AI Engineering',
   tagline: 'See how software really works.',
   profileImage: '/profile-photo.jpg',
-  github: '',
+  github: 'https://github.com/NTDarshan/UnderTheHood',
   linkedin: '',
 };
