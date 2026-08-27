@@ -14,7 +14,7 @@ import { ScrollToDirective } from '../../directives/scroll-to.directive';
         </a>
 
         <nav class="navbar-links" aria-label="Primary">
-          <a href="#roadmap" appScrollTo="roadmap">Explore</a>
+          <a href="#explore" appScrollTo="explore">Explore</a>
           <a href="#roadmap" appScrollTo="roadmap">Roadmap</a>
           <a href="#about" appScrollTo="about">About</a>
         </nav>
@@ -35,7 +35,7 @@ import { ScrollToDirective } from '../../directives/scroll-to.directive';
 
       @if (menuOpen()) {
         <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
-          <a href="#roadmap" appScrollTo="roadmap" (click)="closeMenu()">Explore</a>
+          <a href="#explore" appScrollTo="explore" (click)="closeMenu()">Explore</a>
           <a href="#roadmap" appScrollTo="roadmap" (click)="closeMenu()">Roadmap</a>
           <a href="#about" appScrollTo="about" (click)="closeMenu()">About</a>
         </nav>
