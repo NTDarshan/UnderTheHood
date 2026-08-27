@@ -1,0 +1,71 @@
+<section class="hero" id="top">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-dots" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Under The Hood / Engineering Visualized</p>
+      <h1 class="hero-title">See how software really works.</h1>
+      <p class="hero-subtitle">
+        Interactive visual explanations that take you beneath the abstractions — from C# and .NET
+        to databases, distributed systems, cloud and AI.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#roadmap" appScrollTo="roadmap">Explore the Roadmap →</a>
+        <a class="btn btn-ghost" href="#about" appScrollTo="about">Why I built this</a>
+      </div>
+
+      <dl class="hero-terminal mono" aria-live="polite">
+        <div class="hero-terminal-row">
+          <dt>node</dt>
+          <dd>{{ activeNode.label }}</dd>
+        </div>
+        <div class="hero-terminal-row hero-terminal-detail">
+          <dt>trace</dt>
+          <dd>{{ activeNode.detail }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="hero-visual" role="group" aria-label="Interactive diagram of a request travelling through a backend system">
+      <svg viewBox="0 0 400 380" class="hero-svg" aria-hidden="true">
+        @for (edge of edges; track edge.from + edge.to) {
+          <path
+            [attr.d]="edgePath(edge)"
+            class="hero-edge"
+            [class.hero-edge-active]="isEdgeActive(edge)"
+            fill="none"
+          />
+        }
+
+        @for (edge of edges; track edge.from + edge.to) {
+          @if (isEdgeActive(edge)) {
+            <circle r="2.6" class="hero-particle">
+              <animateMotion dur="1.8s" repeatCount="indefinite" [attr.path]="edgePath(edge)" />
+            </circle>
+          }
+        }
+      </svg>
+
+      <div class="hero-nodes">
+        @for (node of nodes; track node.id) {
+          <button
+            type="button"
+            class="hero-node hero-node-{{ node.id }}"
+            [class.is-active]="activeId() === node.id"
+            [class.is-accent]="node.accent"
+            [style.left.%]="(node.x / 400) * 100"
+            [style.top.%]="(node.y / 380) * 100"
+            (mouseenter)="setActive(node.id)"
+            (focus)="setActive(node.id)"
+            [attr.aria-pressed]="activeId() === node.id"
+          >
+            <span class="hero-node-label">{{ node.label }}</span>
+            <span class="hero-node-sub mono">{{ node.sub }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>

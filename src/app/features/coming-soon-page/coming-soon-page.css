@@ -1,0 +1,62 @@
+.page {
+  position: relative;
+  min-height: calc(100dvh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding-block: 64px;
+}
+
+.page-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  margin-bottom: 40px;
+}
+
+.back-link:hover {
+  color: var(--accent-strong);
+}
+
+.page-card {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem);
+  color: var(--text);
+}
+
+.page-description {
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.page-panel {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.page-panel-dim {
+  color: var(--text-faint);
+}
+
+.page-card .btn {
+  margin-top: 8px;
+}

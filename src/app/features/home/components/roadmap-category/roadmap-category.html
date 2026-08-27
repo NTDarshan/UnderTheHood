@@ -1,0 +1,30 @@
+<article class="category" appReveal>
+  <div class="category-spine" aria-hidden="true">
+    <span class="category-node"></span>
+    @if (!last()) {
+      <span class="category-line"></span>
+    }
+  </div>
+
+  <div class="category-panel">
+    <button type="button" class="category-header" (click)="toggle()" [attr.aria-expanded]="expanded()">
+      <span class="category-index mono">{{ category().index }}</span>
+      <span class="category-heading">
+        <span class="category-title">{{ category().title }}</span>
+        <span class="category-description">{{ category().description }}</span>
+      </span>
+      <span class="category-count mono">{{ category().topics.length }} topics</span>
+      <svg class="category-chevron" [class.is-open]="expanded()" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    @if (expanded()) {
+      <div class="category-topics">
+        @for (topic of category().topics; track topic.id) {
+          <app-roadmap-topic [topic]="topic" />
+        }
+      </div>
+    }
+  </div>
+</article>

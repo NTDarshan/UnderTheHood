@@ -1,0 +1,79 @@
+<section class="teaser-section">
+  <div class="container">
+    <div appReveal>
+      <app-section-heading
+        eyebrow="System / 04 — Preview"
+        title="The first experiments are coming."
+        subtitle="These aren't built yet — but here's what they'll look like."
+      />
+    </div>
+
+    <div class="teaser-grid">
+      @for (topic of previews; track topic.id; let i = $index) {
+        <a class="teaser-card" [routerLink]="['/explore', topic.id]" appReveal [appRevealDelay]="i * 80">
+          <span class="teaser-category mono">Preview</span>
+          <h3 class="teaser-title">{{ topic.title }}</h3>
+          <p class="teaser-description">{{ topic.description }}</p>
+
+          <div class="teaser-visual" aria-hidden="true">
+            @switch (topic.visualizationType) {
+              @case ('http') {
+                <svg viewBox="0 0 200 90" class="teaser-svg">
+                  <rect x="4" y="10" width="52" height="24" rx="4" class="teaser-node" />
+                  <text x="30" y="26" class="teaser-node-text">CLIENT</text>
+                  <rect x="144" y="10" width="52" height="24" rx="4" class="teaser-node" />
+                  <text x="170" y="26" class="teaser-node-text">SERVER</text>
+                  <line x1="56" y1="16" x2="144" y2="16" class="teaser-line" />
+                  <line x1="144" y1="28" x2="56" y2="28" class="teaser-line teaser-line-dim" />
+                  <text x="100" y="12" class="teaser-caption">GET /api/users</text>
+                  <text x="100" y="44" class="teaser-caption teaser-caption-dim">200 OK</text>
+                </svg>
+              }
+              @case ('middleware') {
+                <svg viewBox="0 0 200 90" class="teaser-svg">
+                  @for (box of [0, 1, 2, 3]; track box) {
+                    <rect [attr.x]="6 + box * 48" y="30" width="38" height="30" rx="4" class="teaser-node" />
+                  }
+                  <line x1="6" y1="45" x2="196" y2="45" class="teaser-line teaser-line-behind" />
+                  <circle cx="20" cy="45" r="3" class="teaser-dot" />
+                </svg>
+              }
+              @case ('database') {
+                <svg viewBox="0 0 200 90" class="teaser-svg">
+                  @for (row of [0, 1, 2, 3, 4]; track row) {
+                    <rect x="16" [attr.y]="8 + row * 15" width="90" height="10" rx="2" [class.teaser-row-hit]="row === 2" class="teaser-row" />
+                  }
+                  <path d="M116 45 L150 45" class="teaser-line" />
+                  <rect x="150" y="34" width="40" height="22" rx="4" class="teaser-node" />
+                  <text x="170" y="49" class="teaser-node-text">O(log n)</text>
+                </svg>
+              }
+              @case ('concurrency') {
+                <svg viewBox="0 0 200 90" class="teaser-svg">
+                  @for (lane of [0, 1, 2]; track lane) {
+                    <rect x="10" [attr.y]="14 + lane * 22" width="90" height="10" rx="2" class="teaser-row teaser-row-hit" />
+                  }
+                  <text x="55" y="10" class="teaser-caption">parallel</text>
+                  <rect x="110" y="14" width="80" height="10" rx="2" class="teaser-row" />
+                  <rect x="110" y="36" width="60" height="10" rx="2" class="teaser-row" style="opacity:.5" />
+                  <rect x="110" y="58" width="40" height="10" rx="2" class="teaser-row" style="opacity:.3" />
+                  <text x="150" y="10" class="teaser-caption teaser-caption-dim">concurrent</text>
+                </svg>
+              }
+              @default {
+                <svg viewBox="0 0 200 90" class="teaser-svg">
+                  <rect x="70" y="30" width="60" height="30" rx="4" class="teaser-node" />
+                </svg>
+              }
+            }
+          </div>
+
+          <div class="teaser-footer">
+            <app-status-badge [status]="topic.status" />
+            <span class="teaser-link mono">Explore →</span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>

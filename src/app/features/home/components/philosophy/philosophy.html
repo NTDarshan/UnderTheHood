@@ -1,0 +1,43 @@
+<section class="philosophy" id="why">
+  <div class="container">
+    <div appReveal>
+      <app-section-heading
+        eyebrow="System / 01"
+        title="Most tutorials teach you what to do."
+        subtitle="UnderTheHood explores why it works."
+      />
+    </div>
+
+    <div class="compare" appReveal [appRevealDelay]="120">
+      <div class="compare-col compare-traditional">
+        <p class="compare-label mono">Traditional learning</p>
+        <ol class="flow">
+          @for (step of traditional; track step.label; let last = $last) {
+            <li class="flow-step" [class.flow-step-muted]="step.muted">
+              <span class="flow-dot" aria-hidden="true"></span>
+              {{ step.label }}
+            </li>
+            @if (!last) {
+              <li class="flow-arrow" aria-hidden="true">↓</li>
+            }
+          }
+        </ol>
+      </div>
+
+      <div class="compare-col compare-uth">
+        <p class="compare-label mono">UnderTheHood</p>
+        <ol class="flow flow-strong">
+          @for (step of underTheHood; track step.label; let last = $last) {
+            <li class="flow-step flow-step-strong">
+              <span class="flow-dot flow-dot-strong" aria-hidden="true"></span>
+              {{ step.label }}
+            </li>
+            @if (!last) {
+              <li class="flow-arrow flow-arrow-strong" aria-hidden="true">↓</li>
+            }
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

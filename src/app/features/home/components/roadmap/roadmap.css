@@ -1,0 +1,12 @@
+.roadmap-section {
+  padding-block: 96px;
+  border-top: 1px solid var(--border);
+}
+
+.roadmap-head {
+  margin-bottom: 56px;
+}
+
+.roadmap-tree {
+  max-width: 880px;
+}

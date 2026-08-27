@@ -1,0 +1,59 @@
+.about {
+  padding-block: 96px;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
+.about-inner {
+  display: grid;
+  gap: 56px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-inner {
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+  }
+}
+
+.about-avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.about-title {
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  margin-top: 12px;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.about-text {
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 60ch;
+}
+
+.about-text-quote {
+  color: var(--text);
+  border-left: 2px solid var(--accent);
+  padding-left: 16px;
+  font-style: italic;
+}
+
+.about-role {
+  margin-top: 20px;
+  margin-bottom: 16px;
+  font-size: 0.8125rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.about-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

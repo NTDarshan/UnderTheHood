@@ -1,0 +1,17 @@
+<section class="roadmap-section" id="roadmap">
+  <div class="container">
+    <div class="roadmap-head" appReveal>
+      <app-section-heading
+        eyebrow="Learning Path / Backend"
+        title="The Roadmap"
+        subtitle="A first-principles journey through backend engineering — {{ topicCount }} topics across four stages, activated one interactive experience at a time."
+      />
+    </div>
+
+    <div class="roadmap-tree">
+      @for (category of categories; track category.id; let last = $last) {
+        <app-roadmap-category [category]="category" [last]="last" />
+      }
+    </div>
+  </div>
+</section>

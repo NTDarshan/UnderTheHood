@@ -1,0 +1,34 @@
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-avatar" appReveal>
+      <app-profile-avatar />
+    </div>
+
+    <div class="about-copy" appReveal [appRevealDelay]="120">
+      <p class="eyebrow">System / 02 — Builder</p>
+      <h2 class="about-title">I'm learning by building.</h2>
+
+      <p class="about-text">
+        I'm a full-stack developer with nearly 3 years of experience, currently going deeper into
+        backend engineering, system design and AI engineering.
+      </p>
+      <p class="about-text">
+        I'm following a first-principles approach to backend development and building
+        UnderTheHood alongside that journey. Every time I learn something worth understanding
+        deeply, I want to turn it into an interactive visual experiment.
+      </p>
+      <p class="about-text about-text-quote">
+        Instead of writing another page of theory after learning a concept, I want to understand
+        it deeply enough to visualize what is actually happening.
+      </p>
+
+      <div class="about-role mono">{{ siteConfig.role }}</div>
+
+      <ul class="about-stack" aria-label="Technologies around this project">
+        @for (tech of stack; track tech) {
+          <li><app-tech-badge [label]="tech" /></li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

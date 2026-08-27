@@ -1,0 +1,18 @@
+<section class="current" aria-labelledby="current-heading">
+  <div class="container">
+    <div class="current-panel" appReveal>
+      <div class="current-glow" aria-hidden="true"></div>
+
+      <span class="eyebrow">Status: Building</span>
+      <h2 id="current-heading" class="current-headline">{{ data.headline }}</h2>
+      <p class="current-focus">{{ data.focus }}</p>
+      <p class="current-note">{{ data.note }}</p>
+
+      <div class="current-next mono">
+        <span class="current-next-label">Next up</span>
+        <span class="current-next-arrow" aria-hidden="true">→</span>
+        <span class="current-next-value">{{ data.nextTopicLabel }}</span>
+      </div>
+    </div>
+  </div>
+</section>

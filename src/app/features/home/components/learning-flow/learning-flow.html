@@ -1,0 +1,29 @@
+<section class="learning-flow">
+  <div class="container">
+    <div appReveal>
+      <app-section-heading
+        eyebrow="System / 03 — Process"
+        title="How this works"
+        subtitle="Every concept on this site goes through the same four stages before it becomes a page."
+      />
+    </div>
+
+    <ol class="steps">
+      @for (step of steps; track step.index; let last = $last; let i = $index) {
+        <li class="step" appReveal [appRevealDelay]="i * 90">
+          <span class="step-index mono">{{ step.index }}</span>
+          <h3 class="step-title">{{ step.title }}</h3>
+          <p class="step-description">{{ step.description }}</p>
+        </li>
+        @if (!last) {
+          <li class="step-connector" aria-hidden="true">
+            <svg viewBox="0 0 40 12" class="step-connector-svg">
+              <line x1="0" y1="6" x2="34" y2="6" />
+              <path d="M28 1 L34 6 L28 11" fill="none" />
+            </svg>
+          </li>
+        }
+      }
+    </ol>
+  </div>
+</section>

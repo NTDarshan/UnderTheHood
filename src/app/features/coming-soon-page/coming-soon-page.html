@@ -1,0 +1,30 @@
+<section class="page">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="container page-inner">
+    <a class="back-link mono" routerLink="/">← Back to roadmap</a>
+
+    @if (topic(); as t) {
+      <div class="page-card">
+        @if (category(); as cat) {
+          <p class="eyebrow">{{ cat.title }}</p>
+        }
+        <h1 class="page-title">{{ t.title }}</h1>
+        <p class="page-description">{{ t.description }}</p>
+        <app-status-badge [status]="t.status" />
+
+        <div class="page-panel mono">
+          <p>This interactive visualization hasn't been built yet.</p>
+          <p class="page-panel-dim">It's part of the UnderTheHood roadmap and will go live here once it's ready.</p>
+        </div>
+
+        <a class="btn btn-primary" href="#roadmap" appScrollTo="roadmap">Back to the roadmap</a>
+      </div>
+    } @else {
+      <div class="page-card">
+        <h1 class="page-title">Not found</h1>
+        <p class="page-description">That topic isn't part of the roadmap yet.</p>
+        <a class="btn btn-primary" href="#roadmap" appScrollTo="roadmap">Back to the roadmap</a>
+      </div>
+    }
+  </div>
+</section>
