@@ -20,6 +20,7 @@ import { siteConfig } from '../../../data/site-config';
             [src]="profileImage"
             alt="Portrait of {{ name }}"
             class="avatar-image"
+            decoding="async"
             (error)="imageOk.set(false)"
           />
         } @else {
