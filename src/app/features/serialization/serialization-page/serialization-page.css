@@ -38,6 +38,13 @@
     right: 20px;
     transform: translateY(-50%);
     z-index: 50;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 8px;
+    border-radius: var(--radius-lg);
+    background: color-mix(in srgb, var(--surface) 90%, transparent);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(6px);
   }
 
   .progress-rail ol {
@@ -79,12 +86,15 @@
     transition: max-width 0.2s ease, opacity 0.2s ease;
   }
 
-  .progress-rail:hover .progress-label,
+  .progress-dot:hover .progress-label,
+  .progress-dot:focus-visible .progress-label,
   .progress-dot.is-active .progress-label {
-    max-width: 160px;
+    max-width: 180px;
     opacity: 1;
   }
 
+  .progress-dot:hover,
+  .progress-dot:focus-visible,
   .progress-dot.is-active {
     color: var(--accent);
     background: var(--surface-raised);
