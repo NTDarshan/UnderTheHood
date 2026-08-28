@@ -14,9 +14,9 @@ export const roadmapData: RoadmapCategory[] = [
     topics: [
       { id: 'http-protocol', title: 'HTTP Protocol', description: 'The request/response cycle underneath every API call.', status: 'interactive', visualizationType: 'http', route: '/explore/http' },
       { id: 'routing', title: 'Routing', description: 'How a URL resolves to the code that handles it.', status: 'interactive', visualizationType: 'routing', route: '/explore/routing' },
-      { id: 'serialization', title: 'Serialization & Deserialization', description: 'Turning objects into bytes and back again.', status: 'coming-soon' },
-      { id: 'auth', title: 'Authentication & Authorization', description: 'Proving who you are, then what you are allowed to do.', status: 'coming-soon' },
-      { id: 'validation', title: 'Validation & Transformation', description: 'Shaping untrusted input into something safe to use.', status: 'coming-soon' },
+      { id: 'serialization', title: 'Serialization & Deserialization', description: 'Turning objects into bytes and back again.', status: 'interactive', visualizationType: 'serialization', route: '/explore/serialization' },
+      { id: 'auth', title: 'Authentication & Authorization', description: 'Proving who you are, then what you are allowed to do.', status: 'interactive', visualizationType: 'auth', route: '/explore/auth' },
+      { id: 'validation', title: 'Validation & Transformation', description: 'Shaping untrusted input into something safe to use.', status: 'interactive', visualizationType: 'validation', route: '/explore/validation' },
       { id: 'middleware', title: 'Middleware', description: 'The pipeline a request travels through before it is handled.', status: 'coming-soon', visualizationType: 'middleware' },
       { id: 'request-context', title: 'Request Context', description: 'State that travels with a request through its lifetime.', status: 'coming-soon' },
       { id: 'handlers-controllers-services', title: 'Handlers, Controllers & Services', description: 'Where responsibility actually lives in a backend app.', status: 'coming-soon' },

@@ -17,6 +17,22 @@ export const routes: Routes = [
     title: 'UnderTheHood — Routing in Backend',
   },
   {
+    path: 'explore/serialization',
+    loadComponent: () =>
+      import('./features/serialization/serialization-page/serialization-page').then((m) => m.SerializationPage),
+    title: 'UnderTheHood — Serialization & Deserialization',
+  },
+  {
+    path: 'explore/auth',
+    loadComponent: () => import('./features/auth/auth-page/auth-page').then((m) => m.AuthPage),
+    title: 'UnderTheHood — Authentication & Authorization',
+  },
+  {
+    path: 'explore/validation',
+    loadComponent: () => import('./features/validation/validation-page/validation-page').then((m) => m.ValidationPage),
+    title: 'UnderTheHood — Validation & Transformation',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

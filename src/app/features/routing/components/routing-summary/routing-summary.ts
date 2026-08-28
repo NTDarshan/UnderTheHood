@@ -45,7 +45,7 @@ import { RouterLink } from '@angular/router';
           </div>
           <div class="chapter-nav">
             <a class="lab-btn" routerLink="/explore/http">← Previous: HTTP</a>
-            <a class="lab-btn" routerLink="/" fragment="roadmap">Next: Serialization →</a>
+            <a class="lab-btn" routerLink="/explore/serialization">Next: Serialization →</a>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@ import { RouterLink } from '@angular/router';
       <div class="container next-concept-inner">
         <a class="prev-link mono" routerLink="/explore/http">← Previous concept</a>
         <a class="btn btn-ghost" routerLink="/" fragment="roadmap">Roadmap</a>
-        <span class="next-link mono is-disabled" aria-disabled="true">Next concept →</span>
+        <a class="next-link mono" routerLink="/explore/serialization">Next concept →</a>
       </div>
     </section>
   `,

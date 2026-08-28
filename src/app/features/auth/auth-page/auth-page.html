@@ -1,0 +1,51 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Authentication &amp; Authorization</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-auth-hero />
+  <app-security-gateway />
+  <app-auth-vs-authz />
+  <app-identity-timeline />
+  <app-password-security />
+  <app-login-flow />
+  <app-session-architecture />
+  <app-cookie-visualizer />
+  <app-stateful-vs-stateless />
+  <app-jwt-lab />
+  <app-token-lifecycle />
+  <app-oauth-oidc />
+  <app-api-key-mfa />
+  <app-authorization-models />
+  <app-request-pipeline />
+  <app-be-the-server-game />
+  <app-attack-lab />
+  <app-auth-recap />
+  <app-architecture-comparison />
+  <app-real-world-flow />
+  <app-security-playground />
+  <app-knowledge-quiz />
+  <app-auth-summary />
+</div>

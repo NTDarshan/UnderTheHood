@@ -12,8 +12,8 @@ export interface CurrentLearning {
  */
 export const currentLearning: CurrentLearning = {
   headline: 'Currently under the hood...',
-  focus: 'HTTP and Routing are live — studying Serialization next.',
-  note: 'Two interactive labs have shipped. Onto the next concept.',
-  nextTopicId: 'serialization',
-  nextTopicLabel: 'Serialization & Deserialization',
+  focus: 'HTTP, Routing, Serialization, Authentication & Authorization, and Validation & Transformation are live — studying Middleware next.',
+  note: 'Five interactive labs have shipped. Onto the next concept.',
+  nextTopicId: 'middleware',
+  nextTopicLabel: 'Middleware',
 };

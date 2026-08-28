@@ -1,0 +1,55 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Validation &amp; Transformation</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-validation-hero />
+  <app-api-layer-visualizer />
+  <app-why-validation-exists />
+  <app-validation-vs-transformation />
+  <app-type-validation-lab />
+  <app-syntax-semantic-validation />
+  <app-cross-field-validation />
+  <app-nullable-optional-defaults />
+  <app-range-length-allowlist />
+  <app-validation-vs-sanitization />
+  <app-frontend-backend-trust />
+  <app-request-binding-sources />
+  <app-validation-order-pipeline />
+  <app-business-rules-domain />
+  <app-error-response-design />
+  <app-nested-collection-validation />
+  <app-transformation-lab />
+  <app-dto-overposting />
+  <app-validation-playground />
+  <app-request-debugger />
+  <app-break-the-api-game />
+  <app-where-rule-live-game />
+  <app-observability-performance />
+  <app-principles-misconceptions />
+  <app-real-world-order-flow />
+  <app-knowledge-quiz />
+  <app-validation-summary />
+</div>

@@ -1,0 +1,44 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Serialization</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-serialization-hero />
+  <app-data-type-dilemma />
+  <app-memory-vs-wire />
+  <app-serialize-deserialize-flow />
+  <app-osi-visualizer />
+  <app-format-explorer />
+  <app-json-anatomy />
+  <app-http-request-inspector />
+  <app-serialization-playground />
+  <app-deserialization-playground />
+  <app-schema-evolution />
+  <app-performance-security />
+  <app-real-world-flow />
+  <app-break-serializer />
+  <app-knowledge-quiz />
+  <app-serialization-summary />
+</div>
