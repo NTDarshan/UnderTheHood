@@ -1,0 +1,43 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Routing</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-routing-hero />
+  <app-method-route-matrix />
+  <app-static-dynamic-routes />
+  <app-path-query-params />
+  <app-route-matching-engine />
+  <app-route-ordering-demo />
+  <app-nested-routing />
+  <app-route-constraints />
+  <app-versioning-lifecycle />
+  <app-redirects-demo />
+  <app-catchall-404 />
+  <app-break-the-router />
+  <app-real-world-flow />
+  <app-best-practices />
+  <app-routing-summary />
+</div>

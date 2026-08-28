@@ -2,16 +2,16 @@
   <div class="container">
     <div appReveal>
       <app-section-heading
-        eyebrow="System / 04 — Preview"
-        title="The first experiments are coming."
-        subtitle="These aren't built yet — but here's what they'll look like."
+        eyebrow="System / 04 — Explore"
+        title="Some concepts are already interactive."
+        subtitle="Others are still previews of what they'll look like once they're built."
       />
     </div>
 
     <div class="teaser-grid">
       @for (topic of previews; track topic.id; let i = $index) {
-        <a class="teaser-card" [routerLink]="['/explore', topic.id]" appReveal [appRevealDelay]="i * 80">
-          <span class="teaser-category mono">Preview</span>
+        <a class="teaser-card" [routerLink]="topic.route ?? ['/explore', topic.id]" appReveal [appRevealDelay]="i * 80">
+          <span class="teaser-category mono">{{ topic.status === 'interactive' ? 'Live' : 'Preview' }}</span>
           <h3 class="teaser-title">{{ topic.title }}</h3>
           <p class="teaser-description">{{ topic.description }}</p>
 

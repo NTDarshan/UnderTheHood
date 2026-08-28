@@ -12,7 +12,8 @@ export interface CurrentLearning {
  */
 export const currentLearning: CurrentLearning = {
   headline: 'Currently under the hood...',
-  focus: 'Backend Engineering from first principles',
-  note: 'Building the first interactive experiences soon.',
-  nextTopicLabel: 'First concepts',
+  focus: 'HTTP and Routing are live — studying Serialization next.',
+  note: 'Two interactive labs have shipped. Onto the next concept.',
+  nextTopicId: 'serialization',
+  nextTopicLabel: 'Serialization & Deserialization',
 };

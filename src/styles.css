@@ -313,3 +313,235 @@ ul, ol {
 @keyframes dash-flow {
   to { stroke-dashoffset: -24; }
 }
+
+/* ==========================================================================
+   Lab section primitives — shared by /explore/http and future concept labs
+   ========================================================================== */
+
+.lab-section {
+  position: relative;
+  padding-block: 64px;
+  border-top: 1px solid var(--border);
+}
+
+.lab-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+}
+
+.lab-title {
+  font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.25rem);
+  color: var(--text);
+  max-width: 720px;
+}
+
+.lab-lede {
+  margin-top: 14px;
+  max-width: 640px;
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.lab-panel {
+  margin-top: 32px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .lab-panel {
+    padding: 32px;
+  }
+}
+
+.lab-note {
+  margin-top: 18px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.lab-note strong {
+  color: var(--text);
+}
+
+.lab-note-warn {
+  border-left: 2px solid var(--accent);
+  padding-left: 14px;
+}
+
+.lab-code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text-muted);
+}
+
+.lab-code .tok-method {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.lab-code .tok-status-ok {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.lab-code .tok-status-err {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.lab-code .tok-key {
+  color: var(--text);
+}
+
+.lab-code .tok-dim {
+  color: var(--text-faint);
+}
+
+.lab-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.lab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-elevated);
+  color: var(--text);
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.lab-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.lab-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lab-btn.is-active,
+.lab-btn[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface-elevated));
+}
+
+.lab-btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #1a0d04;
+}
+
+.lab-btn-primary:hover {
+  background: var(--accent-strong);
+  color: #1a0d04;
+  box-shadow: 0 0 20px var(--glow-accent);
+}
+
+.lab-btn-danger:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.lab-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.lab-field label {
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lab-field select,
+.lab-field input {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 9px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.lab-field select:focus-visible,
+.lab-field input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.lab-node {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.lab-flow-arrow {
+  color: var(--text-faint);
+  font-size: 0.75rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+}
+
+.pill-yes {
+  color: var(--accent-2);
+  border-color: var(--accent-2-dim);
+}
+
+.pill-no {
+  color: var(--text-faint);
+}
+
+.pill-conditional {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}

@@ -8,7 +8,7 @@ import { StatusBadge } from '../../../../shared/components/status-badge/status-b
   standalone: true,
   imports: [RouterLink, StatusBadge],
   template: `
-    <a class="topic" [routerLink]="['/explore', topic().id]">
+    <a class="topic" [routerLink]="topic().route ?? ['/explore', topic().id]">
       <span class="topic-marker" aria-hidden="true"></span>
       <span class="topic-body">
         <span class="topic-title">{{ topic().title }}</span>
