@@ -39,6 +39,11 @@ export const routes: Routes = [
     title: 'UnderTheHood — Controllers, Services, Repositories & Middleware',
   },
   {
+    path: 'explore/rest',
+    loadComponent: () => import('./features/rest-api/rest-api-page/rest-api-page').then((m) => m.RestApiPage),
+    title: 'UnderTheHood — Complete REST API Design',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

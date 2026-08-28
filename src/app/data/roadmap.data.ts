@@ -19,7 +19,7 @@ export const roadmapData: RoadmapCategory[] = [
       { id: 'validation', title: 'Validation & Transformation', description: 'Shaping untrusted input into something safe to use.', status: 'interactive', visualizationType: 'validation', route: '/explore/validation' },
       { id: 'backend-layers', title: 'Controllers, Services, Repositories & Middleware', description: 'Where responsibility lives in a backend app, and what travels with a request.', status: 'interactive', visualizationType: 'backend-layers', route: '/explore/backend-layers' },
       { id: 'crud', title: 'CRUD', description: 'The four operations underneath almost every feature.', status: 'coming-soon' },
-      { id: 'rest', title: 'RESTful Architecture & Best Practices', description: 'Why REST looks the way it does, not just how to use it.', status: 'coming-soon' },
+      { id: 'rest', title: 'Complete REST API Design', description: 'Design, debug and evolve a real production API — resources, methods, status codes, pagination, versioning.', status: 'interactive', visualizationType: 'rest-api', route: '/explore/rest' },
     ],
   },
   {

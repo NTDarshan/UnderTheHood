@@ -2,47 +2,51 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-backend-layers-summary',
+  selector: 'app-rest-summary',
   standalone: true,
   imports: [RouterLink],
   template: `
     <section class="lab-section" id="summary">
       <div class="container">
-        <p class="lab-index">BACKEND LAYERS / 30 — FINAL MENTAL MODEL</p>
-        <h2 class="lab-title">A backend is not one giant function. It is a pipeline of responsibilities.</h2>
+        <p class="lab-index">REST API / 47 — FINAL MENTAL MODEL</p>
+        <h2 class="lab-title">A good API doesn't make the client guess.</h2>
 
         <div class="model-diagram mono">
-          <div class="model-node root">REQUEST</div>
+          <div class="model-node root">CLIENT</div>
           <div class="model-arrow">↓</div>
-          <div class="model-node">MIDDLEWARE<br /><span class="model-sub">cross-cutting concerns</span></div>
+          <div class="model-node">HTTP REQUEST</div>
+          <div class="model-arrow">↓</div>
+          <div class="model-node accent">RESOURCE URL<br /><span class="model-sub">what exists, where</span></div>
+          <div class="model-arrow">↓</div>
+          <div class="model-node accent2">HTTP METHOD<br /><span class="model-sub">what operation</span></div>
+          <div class="model-arrow">↓</div>
+          <div class="model-node">MIDDLEWARE</div>
           <div class="model-arrow">↓</div>
           <div class="model-node">ROUTING</div>
           <div class="model-arrow">↓</div>
-          <div class="model-node accent">CONTROLLER<br /><span class="model-sub">HTTP boundary</span></div>
+          <div class="model-node">CONTROLLER</div>
           <div class="model-arrow">↓</div>
-          <div class="model-node accent2">SERVICE<br /><span class="model-sub">business logic</span></div>
+          <div class="model-node">SERVICE</div>
           <div class="model-arrow">↓</div>
-          <div class="model-node">REPOSITORY<br /><span class="model-sub">data access</span></div>
+          <div class="model-node">REPOSITORY</div>
           <div class="model-arrow">↓</div>
-          <div class="model-node root">DATABASE</div>
+          <div class="model-node">DATABASE</div>
+          <div class="model-arrow">↓</div>
+          <div class="model-node root">RESPONSE</div>
         </div>
 
-        <p class="final-line">
-          Middleware handles cross-cutting concerns. Controllers handle HTTP. Services handle application/business
-          behavior. Repositories handle persistence. Request context carries request-scoped metadata. Together,
-          these boundaries make complex systems easier to reason about, test, and evolve.
-        </p>
+        <p class="final-line">A good API doesn't make the client guess.</p>
 
         <div class="takeaways">
           <ol>
-            <li>Splitting a backend into layers trades a little indirection for testability, changeability, and reuse.</li>
-            <li>Middleware is cross-cutting; controllers own HTTP; services own business logic; repositories own persistence.</li>
-            <li>Middleware doesn't have to call next() — it can short-circuit a request entirely.</li>
-            <li>Middleware order is not universal, but it always defines real behavior.</li>
-            <li>Request context is request-scoped metadata — never global state, never shared between requests.</li>
-            <li>Authenticated identity comes from a verified token, never from a client-supplied field.</li>
-            <li>A correlation/trace ID lets one request be reconstructed across distributed services.</li>
-            <li>Layering itself is rarely the performance problem — find the actually expensive work instead.</li>
+            <li>URLs tell the client what exists and where.</li>
+            <li>HTTP methods tell it what operation is intended.</li>
+            <li>Status codes tell it what happened.</li>
+            <li>Representations tell it what the resource looks like.</li>
+            <li>Query parameters tell it how to shape collections.</li>
+            <li>Consistency tells it what to expect.</li>
+            <li>Versioning tells it how the contract evolves.</li>
+            <li>Idempotency tells it what happens when a request repeats.</li>
           </ol>
         </div>
       </div>
@@ -50,8 +54,8 @@ import { RouterLink } from '@angular/router';
 
     <section class="lab-section" id="connection-map">
       <div class="container">
-        <p class="lab-index">BACKEND LAYERS / 31 — CHAPTER CONNECTION MAP</p>
-        <h2 class="lab-title">Six chapters. One backend.</h2>
+        <p class="lab-index">REST API / 48 — CHAPTER CONNECTION MAP</p>
+        <h2 class="lab-title">REST API design is the contract, not just one more layer.</h2>
 
         <div class="pipeline-map mono">
           <span class="map-node">CLIENT</span><span class="map-arrow">↓</span>
@@ -62,26 +66,26 @@ import { RouterLink } from '@angular/router';
           <span class="map-node">AUTHORIZATION</span><span class="map-arrow">↓</span>
           <span class="map-node">VALIDATION</span><span class="map-arrow">↓</span>
           <span class="map-node">TRANSFORMATION</span><span class="map-arrow">↓</span>
-          <span class="map-node is-current">MIDDLEWARE</span><span class="map-arrow">↓</span>
-          <span class="map-node is-current">CONTROLLER</span><span class="map-arrow">↓</span>
-          <span class="map-node is-current">SERVICE</span><span class="map-arrow">↓</span>
-          <span class="map-node is-current">REPOSITORY</span><span class="map-arrow">↓</span>
+          <span class="map-node">MIDDLEWARE</span><span class="map-arrow">↓</span>
+          <span class="map-node">CONTROLLER</span><span class="map-arrow">↓</span>
+          <span class="map-node">SERVICE</span><span class="map-arrow">↓</span>
+          <span class="map-node">REPOSITORY</span><span class="map-arrow">↓</span>
           <span class="map-node">DATABASE</span><span class="map-arrow">↓</span>
-          <span class="map-node">REST API DESIGN</span><span class="map-arrow">↓</span>
+          <span class="map-node is-current">REST API DESIGN</span><span class="map-arrow">↓</span>
           <span class="map-node">RESPONSE</span>
         </div>
 
         <div class="map-legend">
-          <p>Every previous chapter is now part of one complete request lifecycle. Request context runs alongside the whole thing, carrying request-scoped metadata from the first middleware to the final response.</p>
+          <p>REST API design is the contract sitting at the boundary between clients and the backend system.</p>
         </div>
 
         <div class="chapter-footer">
           <div class="chapter-progress">
-            <p class="chapter-label mono">Controllers, Services, Repositories, Middlewares &amp; Request Context · Chapter 6</p>
+            <p class="chapter-label mono">REST API Design Studio · Chapter 10</p>
           </div>
           <div class="chapter-nav">
-            <a class="lab-btn" routerLink="/explore/validation">← Previous: Validation</a>
-            <a class="lab-btn" routerLink="/explore/rest">Next: Complete REST API Design →</a>
+            <a class="lab-btn" routerLink="/explore/backend-layers">← Previous: Controllers, Services &amp; Repositories</a>
+            <a class="lab-btn" routerLink="/" fragment="roadmap">Roadmap</a>
           </div>
         </div>
       </div>
@@ -89,9 +93,9 @@ import { RouterLink } from '@angular/router';
 
     <section class="lab-section next-concept">
       <div class="container next-concept-inner">
-        <a class="prev-link mono" routerLink="/explore/validation">← Previous concept</a>
+        <a class="prev-link mono" routerLink="/explore/backend-layers">← Previous concept</a>
         <a class="btn btn-ghost" routerLink="/" fragment="roadmap">Roadmap</a>
-        <a class="next-link mono" routerLink="/explore/rest">Next concept →</a>
+        <span class="next-link mono is-disabled" aria-disabled="true">Next concept →</span>
       </div>
     </section>
   `,
@@ -128,4 +132,4 @@ import { RouterLink } from '@angular/router';
     .next-link.is-disabled { opacity: 0.4; }
   `,
 })
-export class BackendLayersSummary {}
+export class RestSummary {}

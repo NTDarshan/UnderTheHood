@@ -1,0 +1,78 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Complete REST API Design</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-rest-hero />
+  <app-central-question />
+  <app-rest-history />
+  <app-rest-constraints />
+  <app-statelessness-lab />
+  <app-resource-thinking-lab />
+  <app-url-naming-lab />
+  <app-url-anatomy />
+  <app-resource-hierarchy />
+  <app-http-method-lab />
+  <app-method-deep-dive />
+  <app-idempotency-lab />
+  <app-safe-vs-idempotent />
+  <app-custom-action-designer />
+  <app-status-code-lab />
+  <app-list-api-semantics />
+  <app-pagination-lab />
+  <app-cursor-pagination-lab />
+  <app-pagination-edge-cases />
+  <app-sorting-lab />
+  <app-filtering-lab />
+  <app-list-api-builder />
+  <app-consistency-lab />
+  <app-json-contract-explorer />
+  <app-versioning-lab />
+  <app-compatibility-lab />
+  <app-hateoas-content-negotiation />
+  <app-request-vs-response />
+  <app-api-design-studio />
+  <app-api-linter />
+  <app-crud-designer />
+  <app-error-design-lab />
+  <app-api-security-connection />
+  <app-nested-resource-lab />
+  <app-bulk-async-operations />
+  <app-api-crime-scene />
+  <app-fix-api-game />
+  <app-status-code-game />
+  <app-http-method-game />
+  <app-idempotency-game />
+  <app-api-evolution-game />
+  <app-api-request-debugger />
+  <app-api-design-score />
+  <app-ecommerce-scenario />
+  <app-production-checklist />
+  <app-api-design-principles />
+  <app-rest-summary />
+  <app-interview-mode />
+  <app-knowledge-quiz />
+  <app-final-challenge />
+</div>
