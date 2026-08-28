@@ -88,6 +88,8 @@ import { RouterLink } from '@angular/router';
           <span class="map-node is-current">VALIDATION</span><span class="map-arrow">↓</span>
           <span class="map-node">SERVICE</span><span class="map-arrow">↓</span>
           <span class="map-node">REPOSITORY</span><span class="map-arrow">↓</span>
+          <span class="map-node">MIDDLEWARE</span><span class="map-arrow">↓</span>
+          <span class="map-node">CONTROLLER / SERVICE / REPOSITORY</span><span class="map-arrow">↓</span>
           <span class="map-node">DATABASE</span><span class="map-arrow">↓</span>
           <span class="map-node">RESPONSE</span>
         </div>
@@ -98,7 +100,7 @@ import { RouterLink } from '@angular/router';
           </div>
           <div class="chapter-nav">
             <a class="lab-btn" routerLink="/explore/auth">← Previous: Authentication</a>
-            <a class="lab-btn" routerLink="/" fragment="roadmap">Roadmap</a>
+            <a class="lab-btn" routerLink="/explore/backend-layers">Next: Controllers, Services & Repositories →</a>
           </div>
         </div>
       </div>
@@ -108,7 +110,7 @@ import { RouterLink } from '@angular/router';
       <div class="container next-concept-inner">
         <a class="prev-link mono" routerLink="/explore/auth">← Previous concept</a>
         <a class="btn btn-ghost" routerLink="/" fragment="roadmap">Roadmap</a>
-        <span class="next-link mono is-disabled" aria-disabled="true">Next concept →</span>
+        <a class="next-link mono" routerLink="/explore/backend-layers">Next concept →</a>
       </div>
     </section>
   `,

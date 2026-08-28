@@ -1,0 +1,59 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Controllers, Services, Repositories &amp; Middleware</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-request-lifecycle-hero />
+  <app-bad-backend-vs-layers />
+  <app-backend-pipeline-visualizer />
+  <app-lifecycle-timeline />
+  <app-middleware-pipeline />
+  <app-next-function-visualizer />
+  <app-middleware-ordering-lab />
+  <app-error-propagation-visualizer />
+  <app-controller-visualizer />
+  <app-service-layer-visualizer />
+  <app-repository-visualizer />
+  <app-layer-comparison />
+  <app-rule-placement-game />
+  <app-request-context-visualizer />
+  <app-context-security-lab />
+  <app-correlation-id-visualizer />
+  <app-cancellation-visualizer />
+  <app-context-vs-global-state />
+  <app-context-propagation-lab />
+  <app-request-debugger />
+  <app-failure-simulator />
+  <app-response-lifecycle />
+  <app-dependency-direction />
+  <app-architectural-smells />
+  <app-middleware-vs-service />
+  <app-real-world-order-flow />
+  <app-observability-panel />
+  <app-trace-request-game />
+  <app-interview-mode />
+  <app-knowledge-quiz />
+  <app-backend-layers-summary />
+</div>

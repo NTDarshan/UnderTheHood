@@ -33,6 +33,12 @@ export const routes: Routes = [
     title: 'UnderTheHood — Validation & Transformation',
   },
   {
+    path: 'explore/backend-layers',
+    loadComponent: () =>
+      import('./features/backend-layers/backend-layers-page/backend-layers-page').then((m) => m.BackendLayersPage),
+    title: 'UnderTheHood — Controllers, Services, Repositories & Middleware',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

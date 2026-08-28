@@ -17,9 +17,7 @@ export const roadmapData: RoadmapCategory[] = [
       { id: 'serialization', title: 'Serialization & Deserialization', description: 'Turning objects into bytes and back again.', status: 'interactive', visualizationType: 'serialization', route: '/explore/serialization' },
       { id: 'auth', title: 'Authentication & Authorization', description: 'Proving who you are, then what you are allowed to do.', status: 'interactive', visualizationType: 'auth', route: '/explore/auth' },
       { id: 'validation', title: 'Validation & Transformation', description: 'Shaping untrusted input into something safe to use.', status: 'interactive', visualizationType: 'validation', route: '/explore/validation' },
-      { id: 'middleware', title: 'Middleware', description: 'The pipeline a request travels through before it is handled.', status: 'coming-soon', visualizationType: 'middleware' },
-      { id: 'request-context', title: 'Request Context', description: 'State that travels with a request through its lifetime.', status: 'coming-soon' },
-      { id: 'handlers-controllers-services', title: 'Handlers, Controllers & Services', description: 'Where responsibility actually lives in a backend app.', status: 'coming-soon' },
+      { id: 'backend-layers', title: 'Controllers, Services, Repositories & Middleware', description: 'Where responsibility lives in a backend app, and what travels with a request.', status: 'interactive', visualizationType: 'backend-layers', route: '/explore/backend-layers' },
       { id: 'crud', title: 'CRUD', description: 'The four operations underneath almost every feature.', status: 'coming-soon' },
       { id: 'rest', title: 'RESTful Architecture & Best Practices', description: 'Why REST looks the way it does, not just how to use it.', status: 'coming-soon' },
     ],
@@ -70,7 +68,7 @@ export const roadmapData: RoadmapCategory[] = [
   },
 ];
 
-export const featuredPreviewIds = ['http-protocol', 'middleware', 'databases', 'concurrency'];
+export const featuredPreviewIds = ['http-protocol', 'backend-layers', 'databases', 'concurrency'];
 
 export const featuredPreviews: LearningTopic[] = roadmapData
   .flatMap((category) => category.topics)
