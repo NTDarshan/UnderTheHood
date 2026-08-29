@@ -19,7 +19,7 @@ interface CacheRequest {
   template: `
     <section class="lab-section" id="caching">
       <div class="container">
-        <p class="lab-index">HTTP / 10 — CACHING</p>
+        <p class="lab-index">HTTP / 11 — CACHING</p>
         <h2 class="lab-title">HTTP caching lab — send requests, watch hit, miss, and revalidation.</h2>
         <p class="lab-lede">
           <span class="mono">GET /api/products</span> — send it repeatedly, let time pass, and watch how the

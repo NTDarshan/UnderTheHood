@@ -9,7 +9,7 @@ import { ExplainSimply } from '../../../../shared/components/explain-simply/expl
   template: `
     <section class="lab-section" id="connections">
       <div class="container">
-        <p class="lab-index">HTTP / 13 — PERSISTENT CONNECTIONS</p>
+        <p class="lab-index">HTTP / 14 — PERSISTENT CONNECTIONS</p>
         <h2 class="lab-title">Establishing a connection has a real cost. Reusing it avoids paying twice.</h2>
         <p class="lab-lede">
           HTTP/1.0 historically opened a new

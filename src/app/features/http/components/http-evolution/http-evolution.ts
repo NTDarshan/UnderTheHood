@@ -10,7 +10,7 @@ import { ExplainSimply } from '../../../../shared/components/explain-simply/expl
   template: `
     <section class="lab-section" id="evolution">
       <div class="container">
-        <p class="lab-index">HTTP / 03 — EVOLUTION</p>
+        <p class="lab-index">HTTP / 04 — EVOLUTION</p>
         <h2 class="lab-title">HTTP evolved to solve the problems of the version before it.</h2>
         <p class="lab-lede">
           Each revision responded to a real engineering limitation. Click a version to see what problem

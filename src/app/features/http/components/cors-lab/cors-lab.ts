@@ -10,7 +10,7 @@ import { TermTip } from '../../../../shared/components/term-tip/term-tip';
   template: `
     <section class="lab-section" id="cors">
       <div class="container">
-        <p class="lab-index">HTTP / 08 — OPTIONS &amp; CORS</p>
+        <p class="lab-index">HTTP / 09 — OPTIONS &amp; CORS</p>
         <h2 class="lab-title">Why did the browser send an OPTIONS request?</h2>
         <p class="lab-lede">
           Not every cross-<app-term def="A site's protocol + domain + port together — https://frontend.example and https://api.example are different origins, even if they're run by the same company.">origin</app-term>

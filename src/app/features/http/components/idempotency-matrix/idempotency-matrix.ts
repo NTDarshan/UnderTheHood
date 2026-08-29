@@ -23,7 +23,7 @@ const RETRY_SCENARIOS: RetryScenario[] = [
   template: `
     <section class="lab-section" id="safe-idempotent-cacheable">
       <div class="container">
-        <p class="lab-index">HTTP / 07 — SAFE · IDEMPOTENT · CACHEABLE</p>
+        <p class="lab-index">HTTP / 08 — SAFE · IDEMPOTENT · CACHEABLE</p>
         <h2 class="lab-title">Three separate properties — not one sliding scale.</h2>
         <p class="lab-lede">
           It's tempting to simplify this to "GET is idempotent, POST is not." The real picture has three

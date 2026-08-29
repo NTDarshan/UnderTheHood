@@ -9,7 +9,7 @@ import { ExplainSimply } from '../../../../shared/components/explain-simply/expl
   template: `
     <section class="lab-section" id="status-codes">
       <div class="container">
-        <p class="lab-index">HTTP / 09 — STATUS CODES</p>
+        <p class="lab-index">HTTP / 10 — STATUS CODES</p>
         <h2 class="lab-title">"What happened?" — status codes answer in five classes.</h2>
         <p class="lab-lede">You don't need to memorize the full list. Pick a class, then a representative code.</p>
 

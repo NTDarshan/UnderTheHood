@@ -50,7 +50,7 @@ const MISCONCEPTIONS: Misconception[] = [
   template: `
     <section class="lab-section" id="misconceptions">
       <div class="container">
-        <p class="lab-index">HTTP / 18 — COMMON MISCONCEPTIONS</p>
+        <p class="lab-index">HTTP / 19 — COMMON MISCONCEPTIONS</p>
         <h2 class="lab-title">Things that sound right about HTTP, but aren't.</h2>
         <p class="lab-lede">Pick one — most people believe at least a few of these.</p>
 

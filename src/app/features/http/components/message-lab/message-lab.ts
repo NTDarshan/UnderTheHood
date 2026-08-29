@@ -21,7 +21,7 @@ const METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'] as 
   template: `
     <section class="lab-section" id="messages">
       <div class="container">
-        <p class="lab-index">HTTP / 04 — MESSAGES</p>
+        <p class="lab-index">HTTP / 05 — MESSAGES</p>
         <h2 class="lab-title">A request and a response are both structured text messages.</h2>
         <p class="lab-lede">Click a region on either side to see what it means.</p>
 

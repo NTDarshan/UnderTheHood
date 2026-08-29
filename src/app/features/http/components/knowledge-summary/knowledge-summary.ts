@@ -30,7 +30,7 @@ const ITEMS = [
   template: `
     <section class="lab-section" id="summary">
       <div class="container">
-        <p class="lab-index">HTTP / 19 — WHAT YOU SHOULD NOW UNDERSTAND</p>
+        <p class="lab-index">HTTP / 20 — WHAT YOU SHOULD NOW UNDERSTAND</p>
         <h2 class="lab-title">A checklist, not a wall of text.</h2>
 
         <ul class="checklist">

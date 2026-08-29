@@ -37,7 +37,7 @@ const CATEGORY_LABEL: Record<JourneyStep['category'], string> = {
     <section class="lab-section journey-section" id="journey">
       <div class="bg-grid" aria-hidden="true"></div>
       <div class="container">
-        <p class="lab-index">HTTP / 17 — THE FULL JOURNEY</p>
+        <p class="lab-index">HTTP / 18 — THE FULL JOURNEY</p>
         <h2 class="lab-title">Follow one request under the hood.</h2>
         <p class="lab-lede">Everything on this page, in one continuous pass — from browser click to rendered pixels.</p>
 

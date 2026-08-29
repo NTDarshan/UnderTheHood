@@ -23,7 +23,7 @@ const LAYERS: StackLayer[] = [
   template: `
     <section class="lab-section" id="what-is-http">
       <div class="container">
-        <p class="lab-index">HTTP / 02 — PROTOCOL FOUNDATION</p>
+        <p class="lab-index">HTTP / 03 — PROTOCOL FOUNDATION</p>
         <h2 class="lab-title">HTTP is a language for communication between clients and servers.</h2>
 
         <div class="define-flow mono" appReveal>

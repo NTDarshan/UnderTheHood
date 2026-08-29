@@ -23,7 +23,7 @@ const STEPS: TlsStep[] = [
   template: `
     <section class="lab-section" id="tls">
       <div class="container">
-        <p class="lab-index">HTTP / 16 — TLS &amp; HTTPS</p>
+        <p class="lab-index">HTTP / 17 — TLS &amp; HTTPS</p>
         <h2 class="lab-title">
           HTTPS is HTTP, carried through a
           <app-term def="Transport Layer Security — a protocol that encrypts a connection and verifies who you're actually talking to, so data in transit can't be read or silently altered.">TLS</app-term>-protected

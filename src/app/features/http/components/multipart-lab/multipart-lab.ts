@@ -14,7 +14,7 @@ interface Part {
   template: `
     <section class="lab-section" id="multipart">
       <div class="container">
-        <p class="lab-index">HTTP / 14 — MULTIPART DATA</p>
+        <p class="lab-index">HTTP / 15 — MULTIPART DATA</p>
         <h2 class="lab-title">One HTTP body, several independent parts.</h2>
         <p class="lab-lede">
           <span class="mono">multipart/form-data</span> separates a body into parts, each with its own metadata,

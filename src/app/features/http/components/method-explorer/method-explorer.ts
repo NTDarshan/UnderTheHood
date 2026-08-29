@@ -12,7 +12,7 @@ const PILL_CLASS: Record<TriState, string> = { yes: 'pill-yes', no: 'pill-no', c
   template: `
     <section class="lab-section" id="methods">
       <div class="container">
-        <p class="lab-index">HTTP / 06 — METHODS</p>
+        <p class="lab-index">HTTP / 07 — METHODS</p>
         <h2 class="lab-title">The method communicates the intended semantics of the request.</h2>
         <p class="lab-lede">Select a method to see its purpose and its safety, idempotency and caching characteristics.</p>
 

@@ -9,7 +9,7 @@ import { ExplainSimply } from '../../../../shared/components/explain-simply/expl
   template: `
     <section class="lab-section" id="content-negotiation">
       <div class="container">
-        <p class="lab-index">HTTP / 11 — CONTENT NEGOTIATION</p>
+        <p class="lab-index">HTTP / 12 — CONTENT NEGOTIATION</p>
         <h2 class="lab-title">The client advertises preferences. The server picks a representation.</h2>
         <p class="lab-lede">Change what the client prefers and watch the server select a matching representation.</p>
 

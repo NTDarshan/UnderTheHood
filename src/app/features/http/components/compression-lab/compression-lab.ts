@@ -21,7 +21,7 @@ const ENCODINGS: Encoding[] = [
   template: `
     <section class="lab-section" id="compression">
       <div class="container">
-        <p class="lab-index">HTTP / 12 — COMPRESSION</p>
+        <p class="lab-index">HTTP / 13 — COMPRESSION</p>
         <h2 class="lab-title">Smaller bytes on the wire, decompressed on arrival.</h2>
         <p class="lab-lede">
           The client advertises what it can decode with <span class="mono">Accept-Encoding</span>; the server

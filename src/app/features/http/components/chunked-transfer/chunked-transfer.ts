@@ -8,7 +8,7 @@ import { ExplainSimply } from '../../../../shared/components/explain-simply/expl
   template: `
     <section class="lab-section" id="chunked-transfer">
       <div class="container">
-        <p class="lab-index">HTTP / 15 — CHUNKED TRANSFER</p>
+        <p class="lab-index">HTTP / 16 — CHUNKED TRANSFER</p>
         <h2 class="lab-title">Sending a response before knowing its final size.</h2>
         <p class="lab-lede">
           HTTP/1.1's chunked transfer coding lets a sender stream a response as a series of chunks, ending with a

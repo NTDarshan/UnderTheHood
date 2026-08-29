@@ -11,7 +11,7 @@ const CATEGORIES: HeaderCategory[] = ['general', 'request', 'response', 'represe
   template: `
     <section class="lab-section" id="headers">
       <div class="container">
-        <p class="lab-index">HTTP / 05 — HEADERS</p>
+        <p class="lab-index">HTTP / 06 — HEADERS</p>
         <h2 class="lab-title">Headers carry the metadata — everything about the message that isn't the message itself.</h2>
         <p class="lab-lede">
           A method and a target say what's happening. Headers say everything else: who's asking, what
