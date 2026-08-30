@@ -44,6 +44,12 @@ export const routes: Routes = [
     title: 'UnderTheHood — Complete REST API Design',
   },
   {
+    path: 'explore/websockets',
+    loadComponent: () =>
+      import('./features/websockets/websockets-page/websockets-page').then((m) => m.WebsocketsPage),
+    title: 'UnderTheHood — WebSockets Under the Hood',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

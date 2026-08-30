@@ -1,0 +1,61 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / WebSockets</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-ws-hero />
+  <app-evolution-lab />
+  <app-why-websockets />
+  <app-handshake-lab />
+  <app-full-duplex-demo />
+  <app-lifecycle-state-machine />
+  <app-message-vs-frame />
+  <app-frame-inspector />
+  <app-fragmentation-masking-lab />
+  <app-ping-pong-close />
+  <app-scaling-resources />
+  <app-distributed-pubsub />
+  <app-fanout-backpressure />
+  <app-reconnect-storm />
+  <app-auth-authz-lab />
+  <app-infra-proxies-sticky />
+  <app-comparison-matrix />
+  <app-decision-guide />
+  <app-security-observability />
+  <app-complete-system-architecture />
+  <app-failure-lab />
+  <app-ws-misconceptions />
+  <app-final-mental-model />
+  <app-ws-interview-mode />
+  <app-system-design-challenge />
+
+  <section class="lab-section next-concept">
+    <div class="container next-concept-inner">
+      <a class="prev-link mono is-disabled" aria-disabled="true">← Previous concept</a>
+      <a class="btn btn-ghost" routerLink="/" fragment="roadmap">Roadmap</a>
+      <span class="next-link mono is-disabled" aria-disabled="true">Next concept →</span>
+    </div>
+  </section>
+</div>
