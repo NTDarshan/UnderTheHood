@@ -34,11 +34,11 @@ const RESIDUALS = [2, -3, 1, -4];
         </div>
 
         <div class="lab-btn-row">
-          <button type="button" class="lab-btn lab-btn-primary" (click)="sum()" [disabled]="squared()">
+          <button type="button" class="lab-btn lab-btn-primary" (click)="sum()">
             Sum them
           </button>
           <button type="button" class="lab-btn" [class.is-active]="squared()" (click)="squareToggle()">
-            Square them instead
+            {{ squared() ? 'Show raw residuals' : 'Square them instead' }}
           </button>
         </div>
 
@@ -129,6 +129,6 @@ export class SquaredErrorMse {
   }
 
   squareToggle(): void {
-    this.squared.set(true);
+    this.squared.update((v) => !v);
   }
 }

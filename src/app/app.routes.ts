@@ -50,6 +50,14 @@ export const routes: Routes = [
     title: 'UnderTheHood — WebSockets Under the Hood',
   },
   {
+    path: 'explore/ml',
+    loadComponent: () =>
+      import('./features/machine-learning/machine-learning-page/machine-learning-page').then(
+        (m) => m.MachineLearningPage,
+      ),
+    title: 'UnderTheHood — Machine Learning Under the Hood',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

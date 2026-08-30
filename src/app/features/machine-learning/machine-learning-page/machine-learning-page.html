@@ -1,0 +1,62 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Machine Learning</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-ml-hero />
+  <app-what-is-ml />
+  <app-why-ml />
+  <app-ml-types-map />
+  <app-features-labels />
+  <app-feature-space />
+  <app-line-equation-lab />
+  <app-line-as-model />
+  <app-residual-error />
+  <app-squared-error-mse />
+  <app-feature-space-3d />
+  <app-plane-lab />
+  <app-hyperplane-concept />
+  <app-point-plane-distance />
+  <app-distance-in-ml />
+  <app-knn-lab />
+  <app-model-based-learning />
+  <app-instance-vs-model />
+  <app-feature-scaling />
+  <app-training-vs-inference />
+  <app-generalization-lab />
+  <app-ml-mental-model />
+  <app-ml-playground />
+  <app-break-the-model />
+  <app-ml-terminology-map />
+  <app-ml-interview-mode />
+
+  <section class="lab-section next-concept">
+    <div class="container next-concept-inner">
+      <a class="prev-link mono is-disabled" aria-disabled="true">← Previous concept</a>
+      <a class="btn btn-ghost" routerLink="/" fragment="roadmap">Roadmap</a>
+      <span class="next-link mono is-disabled" aria-disabled="true">Next concept →</span>
+    </div>
+  </section>
+</div>

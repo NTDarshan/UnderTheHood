@@ -55,8 +55,17 @@ export const roadmapData: RoadmapCategory[] = [
     ],
   },
   {
-    id: 'engineering-practices',
+    id: 'machine-learning',
     index: '04',
+    title: 'Machine Learning',
+    description: 'Teach a machine to find the pattern — see the mathematics behind the model.',
+    topics: [
+      { id: 'ml-foundations', title: 'Machine Learning', description: 'Drag a line, rotate a plane, and watch predictions change live — the geometry underneath a model, discovered one experiment at a time.', status: 'interactive', visualizationType: 'machine-learning', route: '/explore/ml' },
+    ],
+  },
+  {
+    id: 'engineering-practices',
+    index: '05',
     title: 'Engineering Practices',
     description: 'The habits that separate a project from a product.',
     topics: [
