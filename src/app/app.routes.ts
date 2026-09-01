@@ -58,6 +58,14 @@ export const routes: Routes = [
     title: 'UnderTheHood — Machine Learning Under the Hood',
   },
   {
+    path: 'explore/backend-scaling',
+    loadComponent: () =>
+      import('./features/backend-scaling/backend-scaling-page/backend-scaling-page').then(
+        (m) => m.BackendScalingPage,
+      ),
+    title: 'UnderTheHood — Backend Scaling & Performance Engineering',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

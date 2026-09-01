@@ -1,0 +1,72 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Explore / Backend Scaling & Performance Engineering</span>
+  </div>
+</div>
+
+<nav class="progress-rail" aria-label="Section progress">
+  <ol>
+    @for (item of progress; track item.id; let i = $index) {
+      <li>
+        <button
+          type="button"
+          class="progress-dot"
+          [class.is-active]="activeSection() === item.id"
+          (click)="scrollTo(item.id)"
+          [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+        >
+          <span class="progress-index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="progress-label">{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ol>
+</nav>
+
+<div>
+  <app-perf-hero />
+  <app-latency-breakdown />
+  <app-average-vs-tail />
+  <app-percentiles-lab />
+  <app-throughput-concurrency />
+  <app-utilization-curve />
+  <app-queueing-backpressure />
+  <app-bottleneck-lab />
+  <app-measure-dont-guess />
+  <app-profiling-lab />
+  <app-distributed-tracing />
+  <app-n-plus-one />
+  <app-database-indexes />
+  <app-connection-pooling />
+  <app-caching-lab />
+  <app-cache-invalidation />
+  <app-cache-stampede />
+  <app-vertical-vs-horizontal-scaling />
+  <app-statelessness-loadbalancing />
+  <app-database-scaling />
+  <app-cdn-edge />
+  <app-async-queue-workers />
+  <app-microservices-vs-monolith />
+  <app-autoscaling />
+  <app-rate-limiting />
+  <app-load-testing-capacity />
+  <app-performance-vs-scalability />
+  <app-resilience-patterns />
+  <app-full-system-lab />
+  <app-bottleneck-challenges />
+  <app-system-evolution />
+  <app-mental-model-tradeoffs />
+  <app-break-the-system />
+  <app-observability-console />
+  <app-terminology-map />
+  <app-interview-mode />
+
+  <section class="lab-section next-concept">
+    <div class="container next-concept-inner">
+      <a class="prev-link mono is-disabled" aria-disabled="true">← Previous concept</a>
+      <a class="btn btn-ghost" routerLink="/" fragment="roadmap">Roadmap</a>
+      <span class="next-link mono is-disabled" aria-disabled="true">Next concept →</span>
+    </div>
+  </section>
+</div>

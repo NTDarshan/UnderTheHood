@@ -64,8 +64,17 @@ export const roadmapData: RoadmapCategory[] = [
     ],
   },
   {
-    id: 'engineering-practices',
+    id: 'performance-engineering',
     index: '05',
+    title: 'Backend Scaling & Performance Engineering',
+    description: 'Break a backend under load, find the real bottleneck, then measure, optimize, and scale it.',
+    topics: [
+      { id: 'backend-scaling', title: 'Backend Scaling & Performance Engineering', description: 'Push traffic until the system breaks, watch P99 explode while the average looks fine, then fix it — one measured decision at a time.', status: 'interactive', visualizationType: 'backend-scaling', route: '/explore/backend-scaling' },
+    ],
+  },
+  {
+    id: 'engineering-practices',
+    index: '06',
     title: 'Engineering Practices',
     description: 'The habits that separate a project from a product.',
     topics: [
