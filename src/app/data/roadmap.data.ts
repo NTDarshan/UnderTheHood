@@ -46,8 +46,8 @@ export const roadmapData: RoadmapCategory[] = [
       { id: 'configuration', title: 'Configuration Management', description: 'The same code, behaving correctly across environments.', status: 'coming-soon' },
       { id: 'observability', title: 'Logging, Monitoring & Observability', description: 'Knowing what your system is doing without guessing.', status: 'coming-soon' },
       { id: 'graceful-shutdown', title: 'Graceful Shutdown', description: 'Stopping a process without dropping work in flight.', status: 'coming-soon' },
-      { id: 'security', title: 'Security', description: 'The threats a backend has to assume by default.', status: 'coming-soon' },
-      { id: 'scaling', title: 'Scaling & Performance', description: 'What actually breaks first, and why.', status: 'coming-soon' },
+      { id: 'backend-security', title: 'Backend Security', description: 'A security lab, not a definitions page — attack a backend, watch it fail, then defend it and verify the fix actually holds.', status: 'interactive', visualizationType: 'backend-security', route: '/explore/backend-security' },
+      { id: 'backend-scaling', title: 'Backend Scaling & Performance Engineering', description: 'Push traffic until the system breaks, watch P99 explode while the average looks fine, then fix it — one measured decision at a time.', status: 'interactive', visualizationType: 'backend-scaling', route: '/explore/backend-scaling' },
       { id: 'concurrency', title: 'Concurrency & Parallelism', description: 'Watch five requests fight for three database connections, build a deadlock on purpose, then break the system and fix it.', status: 'interactive', visualizationType: 'concurrency', route: '/explore/concurrency' },
       { id: 'object-storage', title: 'Object Storage & Large Files', description: 'Why big files don’t belong in a database row.', status: 'coming-soon' },
       { id: 'realtime', title: 'Real-time Backend Systems', description: 'Pushing state to clients instead of waiting to be asked.', status: 'interactive', visualizationType: 'websockets', route: '/explore/websockets' },
@@ -64,26 +64,8 @@ export const roadmapData: RoadmapCategory[] = [
     ],
   },
   {
-    id: 'performance-engineering',
-    index: '05',
-    title: 'Backend Scaling & Performance Engineering',
-    description: 'Break a backend under load, find the real bottleneck, then measure, optimize, and scale it.',
-    topics: [
-      { id: 'backend-scaling', title: 'Backend Scaling & Performance Engineering', description: 'Push traffic until the system breaks, watch P99 explode while the average looks fine, then fix it — one measured decision at a time.', status: 'interactive', visualizationType: 'backend-scaling', route: '/explore/backend-scaling' },
-    ],
-  },
-  {
-    id: 'backend-security',
-    index: '06',
-    title: 'Backend Security',
-    description: 'Watch input become a query, try to reach someone else’s object, flood a login form — then build the defenses that stop each attack.',
-    topics: [
-      { id: 'backend-security', title: 'Backend Security', description: 'A security lab, not a definitions page — attack a backend, watch it fail, then defend it and verify the fix actually holds.', status: 'interactive', visualizationType: 'backend-security', route: '/explore/backend-security' },
-    ],
-  },
-  {
     id: 'engineering-practices',
-    index: '07',
+    index: '05',
     title: 'Engineering Practices',
     description: 'The habits that separate a project from a product.',
     topics: [
