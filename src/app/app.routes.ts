@@ -74,6 +74,12 @@ export const routes: Routes = [
     title: 'UnderTheHood — Backend Security',
   },
   {
+    path: 'explore/concurrency',
+    loadComponent: () =>
+      import('./features/concurrency/concurrency-page/concurrency-page').then((m) => m.ConcurrencyPage),
+    title: 'UnderTheHood — Concurrency & Parallelism',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

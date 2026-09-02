@@ -48,7 +48,7 @@ export const roadmapData: RoadmapCategory[] = [
       { id: 'graceful-shutdown', title: 'Graceful Shutdown', description: 'Stopping a process without dropping work in flight.', status: 'coming-soon' },
       { id: 'security', title: 'Security', description: 'The threats a backend has to assume by default.', status: 'coming-soon' },
       { id: 'scaling', title: 'Scaling & Performance', description: 'What actually breaks first, and why.', status: 'coming-soon' },
-      { id: 'concurrency', title: 'Concurrency & Parallelism', description: 'Doing many things at once versus doing them together.', status: 'coming-soon', visualizationType: 'concurrency' },
+      { id: 'concurrency', title: 'Concurrency & Parallelism', description: 'Watch five requests fight for three database connections, build a deadlock on purpose, then break the system and fix it.', status: 'interactive', visualizationType: 'concurrency', route: '/explore/concurrency' },
       { id: 'object-storage', title: 'Object Storage & Large Files', description: 'Why big files don’t belong in a database row.', status: 'coming-soon' },
       { id: 'realtime', title: 'Real-time Backend Systems', description: 'Pushing state to clients instead of waiting to be asked.', status: 'interactive', visualizationType: 'websockets', route: '/explore/websockets' },
       { id: 'testing', title: 'Testing & Code Quality', description: 'Confidence that the system does what you think it does.', status: 'coming-soon' },
