@@ -66,6 +66,14 @@ export const routes: Routes = [
     title: 'UnderTheHood — Backend Scaling & Performance Engineering',
   },
   {
+    path: 'explore/backend-security',
+    loadComponent: () =>
+      import('./features/backend-security/backend-security-page/backend-security-page').then(
+        (m) => m.BackendSecurityPage,
+      ),
+    title: 'UnderTheHood — Backend Security',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

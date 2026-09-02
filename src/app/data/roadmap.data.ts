@@ -73,8 +73,17 @@ export const roadmapData: RoadmapCategory[] = [
     ],
   },
   {
-    id: 'engineering-practices',
+    id: 'backend-security',
     index: '06',
+    title: 'Backend Security',
+    description: 'Watch input become a query, try to reach someone else’s object, flood a login form — then build the defenses that stop each attack.',
+    topics: [
+      { id: 'backend-security', title: 'Backend Security', description: 'A security lab, not a definitions page — attack a backend, watch it fail, then defend it and verify the fix actually holds.', status: 'interactive', visualizationType: 'backend-security', route: '/explore/backend-security' },
+    ],
+  },
+  {
+    id: 'engineering-practices',
+    index: '07',
     title: 'Engineering Practices',
     description: 'The habits that separate a project from a product.',
     topics: [
