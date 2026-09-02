@@ -101,8 +101,12 @@ const CYCLE_MS = 2600;
         </div>
 
         <div class="cta-row">
-          <a class="lab-btn lab-btn-primary" href="#security-lab-entry">Enter the Security Lab</a>
-          <a class="lab-btn" href="#threat-modeling">Understand the Threat Model</a>
+          <a class="lab-btn lab-btn-primary" href="#sql-injection" (click)="scrollToSection($event, 'sql-injection')"
+            >Enter the Security Lab</a
+          >
+          <a class="lab-btn" href="#threat-modeling" (click)="scrollToSection($event, 'threat-modeling')"
+            >Understand the Threat Model</a
+          >
         </div>
       </div>
     </section>
@@ -177,6 +181,11 @@ export class SecurityHero {
 
   constructor() {
     this.startAuto();
+  }
+
+  protected scrollToSection(event: Event, id: string): void {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   select(key: EntryKey): void {
