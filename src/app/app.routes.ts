@@ -80,6 +80,14 @@ export const routes: Routes = [
     title: 'UnderTheHood — Concurrency & Parallelism',
   },
   {
+    path: 'explore/graceful-shutdown',
+    loadComponent: () =>
+      import('./features/graceful-shutdown/graceful-shutdown-page/graceful-shutdown-page').then(
+        (m) => m.GracefulShutdownPage,
+      ),
+    title: 'UnderTheHood — Graceful Shutdown',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),
