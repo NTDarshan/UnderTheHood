@@ -14,4 +14,5 @@ import { siteConfig } from '../../../../data/site-config';
 export class AboutBuilder {
   protected readonly siteConfig = siteConfig;
   protected readonly stack = ['.NET', 'ASP.NET Core', 'C#', 'Angular', 'SQL Server', 'Azure', 'AI Engineering'];
+  protected readonly phoneHref = siteConfig.phone.replace(/[^\d+]/g, '');
 }

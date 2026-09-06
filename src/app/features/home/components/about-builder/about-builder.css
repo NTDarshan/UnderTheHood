@@ -57,3 +57,21 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+
+.about-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+}
+
+.about-contact a {
+  color: var(--text-muted);
+}
+
+.about-contact a:hover {
+  color: var(--accent-strong);
+}

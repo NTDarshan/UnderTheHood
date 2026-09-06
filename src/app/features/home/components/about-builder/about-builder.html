@@ -29,6 +29,24 @@
           <li><app-tech-badge [label]="tech" /></li>
         }
       </ul>
+
+      <ul class="about-contact mono" aria-label="Contact details">
+        @if (siteConfig.phone) {
+          <li><a [href]="'tel:' + phoneHref">{{ siteConfig.phone }}</a></li>
+        }
+        @if (siteConfig.email) {
+          <li><a [href]="'mailto:' + siteConfig.email">{{ siteConfig.email }}</a></li>
+        }
+        @if (siteConfig.linkedin) {
+          <li><a [href]="siteConfig.linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
+        }
+        @if (siteConfig.instagram) {
+          <li><a [href]="siteConfig.instagram" target="_blank" rel="noopener">Instagram</a></li>
+        }
+        @if (siteConfig.github) {
+          <li><a [href]="siteConfig.github" target="_blank" rel="noopener">GitHub</a></li>
+        }
+      </ul>
     </div>
   </div>
 </section>
