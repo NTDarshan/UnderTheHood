@@ -25,7 +25,16 @@ import { siteConfig } from '../../../data/site-config';
           @if (siteConfig.linkedin) {
             <a [href]="siteConfig.linkedin" target="_blank" rel="noopener">LinkedIn</a>
           }
-          @if (!siteConfig.github && !siteConfig.linkedin) {
+          @if (siteConfig.instagram) {
+            <a [href]="siteConfig.instagram" target="_blank" rel="noopener">Instagram</a>
+          }
+          @if (siteConfig.email) {
+            <a [href]="'mailto:' + siteConfig.email">{{ siteConfig.email }}</a>
+          }
+          @if (siteConfig.phone) {
+            <a [href]="'tel:' + phoneHref">{{ siteConfig.phone }}</a>
+          }
+          @if (!siteConfig.github && !siteConfig.linkedin && !siteConfig.instagram && !siteConfig.email && !siteConfig.phone) {
             <span class="mono footer-links-pending">Links coming soon</span>
           }
         </div>
@@ -88,4 +97,5 @@ import { siteConfig } from '../../../data/site-config';
 export class Footer {
   protected readonly siteConfig = siteConfig;
   protected readonly year = new Date().getFullYear();
+  protected readonly phoneHref = siteConfig.phone.replace(/[^\d+]/g, '');
 }

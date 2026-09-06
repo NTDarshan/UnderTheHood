@@ -5,6 +5,9 @@ export interface SiteConfig {
   profileImage: string;
   github: string;
   linkedin: string;
+  instagram: string;
+  email: string;
+  phone: string;
 }
 
 /**
@@ -17,5 +20,8 @@ export const siteConfig: SiteConfig = {
   tagline: 'See how software really works.',
   profileImage: '/profile-photo.jpg',
   github: 'https://github.com/NTDarshan/UnderTheHood',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/ntdarshan/',
+  instagram: 'https://www.instagram.com/darshan_n_t_d?stkn=MWt3c2kwb2VmNnN2YQ==',
+  email: 'darshannt2034@gmail.com',
+  phone: '+91 8088356678',
 };
