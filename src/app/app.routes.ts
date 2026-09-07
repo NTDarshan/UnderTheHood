@@ -88,6 +88,12 @@ export const routes: Routes = [
     title: 'UnderTheHood — Graceful Shutdown',
   },
   {
+    path: 'explore/webhooks',
+    loadComponent: () =>
+      import('./features/webhooks/webhooks-page/webhooks-page').then((m) => m.WebhooksPage),
+    title: 'UnderTheHood — Webhooks',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),
