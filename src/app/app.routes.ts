@@ -94,6 +94,12 @@ export const routes: Routes = [
     title: 'UnderTheHood — Webhooks',
   },
   {
+    path: 'explore/devops',
+    loadComponent: () =>
+      import('./features/devops/devops-page/devops-page').then((m) => m.DevopsPage),
+    title: 'UnderTheHood — DevOps for Backend Engineers',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

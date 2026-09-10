@@ -72,7 +72,7 @@ export const roadmapData: RoadmapCategory[] = [
       { id: 'twelve-factor', title: '12-Factor Applications', description: 'A checklist for backends that survive contact with production.', status: 'coming-soon' },
       { id: 'openapi', title: 'OpenAPI Standards', description: 'Describing an API so both humans and machines can trust it.', status: 'coming-soon' },
       { id: 'webhooks', title: 'Webhooks', description: 'Letting other systems tell you when something happened.', status: 'interactive', visualizationType: 'webhooks', route: '/explore/webhooks' },
-      { id: 'devops', title: 'DevOps for Backend Engineers', description: 'Everything past `git push` that makes code someone’s reality.', status: 'coming-soon' },
+      { id: 'devops', title: 'DevOps for Backend Engineers', description: 'Everything past `git push` that makes code someone’s reality.', status: 'interactive', visualizationType: 'devops', route: '/explore/devops' },
     ],
   },
 ];
