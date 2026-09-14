@@ -15,26 +15,6 @@
         Not everything needs a 40-minute deep dive. Some ideas are small enough to learn in five minutes — but
         important enough to understand properly.
       </p>
-
-      <div class="el-stats mono">
-        <div class="el-stat">
-          <span class="el-stat-value">{{ totalCount }}</span>
-          <span class="el-stat-label">Concepts</span>
-        </div>
-        <div class="el-stat">
-          <span class="el-stat-value">{{ progress.completedCount() }}</span>
-          <span class="el-stat-label">Understood</span>
-        </div>
-        <div class="el-stat">
-          <span class="el-stat-value">{{ domainCount }}</span>
-          <span class="el-stat-label">Domains</span>
-        </div>
-      </div>
-
-      <div class="el-progress" role="progressbar" [attr.aria-valuenow]="progress.completedCount()" [attr.aria-valuemax]="totalCount">
-        <div class="el-progress-fill" [style.width.%]="(progress.completedCount() / totalCount) * 100"></div>
-      </div>
-      <p class="el-progress-label mono">{{ progress.completedCount() }} / {{ totalCount }} explored</p>
     </div>
   </section>
 
@@ -64,22 +44,12 @@
             </button>
           }
         </div>
-        <div class="el-filter-row el-filter-row-status mono">
-          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'all'" (click)="setStatusFilter('all')">All</button>
-          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'not-started'" (click)="setStatusFilter('not-started')">Not Started</button>
-          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'in-progress'" (click)="setStatusFilter('in-progress')">In Progress</button>
-          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'completed'" (click)="setStatusFilter('completed')">Completed</button>
-        </div>
       </div>
 
       @if (filteredConcepts().length > 0) {
         <div class="el-grid">
           @for (concept of filteredConcepts(); track trackById($index, concept)) {
-            <app-concept-card
-              [concept]="concept"
-              [categoryMeta]="categoryMetaFor(concept.category)"
-              (open)="openConcept(concept)"
-            />
+            <app-concept-card [concept]="concept" (open)="openConcept(concept)" />
           }
         </div>
       } @else {

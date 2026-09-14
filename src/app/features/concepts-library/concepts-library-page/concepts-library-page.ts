@@ -11,9 +11,7 @@ import {
 } from '../../../data/concepts.data';
 import { ConceptCard } from '../components/concept-card/concept-card';
 import { ConceptDetail } from '../components/concept-detail/concept-detail';
-import { ConceptsProgressService } from '../services/concepts-progress.service';
 
-type StatusFilter = 'all' | 'not-started' | 'in-progress' | 'completed';
 type CategoryFilter = 'all' | ConceptCategory;
 
 @Component({
@@ -26,17 +24,13 @@ type CategoryFilter = 'all' | ConceptCategory;
 export class ConceptsLibraryPage {
   private readonly titleService = inject(Title);
   private readonly meta = inject(Meta);
-  protected readonly progress = inject(ConceptsProgressService);
 
   @ViewChild('searchInput') private searchInputRef?: ElementRef<HTMLInputElement>;
 
   protected readonly categories = conceptCategories;
-  protected readonly totalCount = engineeringConcepts.length;
-  protected readonly domainCount = conceptCategories.length;
 
   protected readonly searchTerm = signal('');
   protected readonly categoryFilter = signal<CategoryFilter>('all');
-  protected readonly statusFilter = signal<StatusFilter>('all');
   protected readonly selectedConcept = signal<EngineeringConcept | null>(null);
 
   private readonly categoryLookup = new Map<ConceptCategory, ConceptCategoryMeta>(
@@ -46,18 +40,9 @@ export class ConceptsLibraryPage {
   protected readonly filteredConcepts = computed(() => {
     const term = this.searchTerm().trim().toLowerCase();
     const category = this.categoryFilter();
-    const status = this.statusFilter();
 
     return engineeringConcepts.filter((concept) => {
       if (category !== 'all' && concept.category !== category) return false;
-
-      if (status !== 'all') {
-        const complete = this.progress.isCompleted(concept.id);
-        const viewed = this.progress.isViewed(concept.id);
-        if (status === 'completed' && !complete) return false;
-        if (status === 'in-progress' && !(viewed && !complete)) return false;
-        if (status === 'not-started' && (complete || viewed)) return false;
-      }
 
       if (term) {
         const haystack = `${concept.name} ${concept.blurb} ${this.categoryLookup.get(concept.category)?.label ?? ''}`.toLowerCase();
@@ -101,13 +86,8 @@ export class ConceptsLibraryPage {
     this.categoryFilter.set(category);
   }
 
-  protected setStatusFilter(status: StatusFilter): void {
-    this.statusFilter.set(status);
-  }
-
   protected openConcept(concept: EngineeringConcept): void {
     this.selectedConcept.set(concept);
-    this.progress.markViewed(concept.id);
   }
 
   protected closeConcept(): void {
@@ -122,7 +102,6 @@ export class ConceptsLibraryPage {
   protected clearFilters(): void {
     this.searchTerm.set('');
     this.categoryFilter.set('all');
-    this.statusFilter.set('all');
   }
 
   protected trackById(_: number, concept: EngineeringConcept): string {

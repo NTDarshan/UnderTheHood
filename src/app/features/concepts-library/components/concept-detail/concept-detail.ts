@@ -1,10 +1,9 @@
-import { Component, EventEmitter, Output, computed, inject, input } from '@angular/core';
+import { Component, EventEmitter, Output, computed, input } from '@angular/core';
 import { NgComponentOutlet } from '@angular/common';
 
 import { ConceptCategoryMeta, EngineeringConcept } from '../../../../data/concepts.data';
 import { CONCEPT_CONTENT } from '../../content/concept-content';
 import { CONCEPT_VISUALS } from '../../content/concept-visuals';
-import { ConceptsProgressService } from '../../services/concepts-progress.service';
 
 const TEMPLATE_STEPS = [
   { label: 'What is it?', hint: 'A beginner-friendly explanation of the concept.' },
@@ -39,13 +38,6 @@ const TEMPLATE_STEPS = [
         <div class="el-drawer-meta mono">
           <span class="el-badge" [attr.data-level]="concept().difficulty">{{ difficultyLabel() }}</span>
           <span>{{ concept().minutes }} min</span>
-          <button type="button" class="el-drawer-toggle" [attr.aria-pressed]="isComplete()" (click)="progress.toggleCompleted(concept().id)">
-            @if (isComplete()) {
-              <span class="el-check-mark">✓</span> Understood
-            } @else {
-              <span class="el-check-ring"></span> Mark as understood
-            }
-          </button>
         </div>
 
         @if (content(); as c) {
@@ -144,8 +136,7 @@ const TEMPLATE_STEPS = [
 
           <p class="el-drawer-note">
             The full walkthrough for <strong>{{ concept().name }}</strong> — explanation, visual, and connected
-            concepts — hasn't been written yet. The library is being filled in one concept at a time. You can still
-            mark it understood above if you already know it.
+            concepts — hasn't been written yet. The library is being filled in one concept at a time.
           </p>
         }
       </div>
@@ -244,36 +235,6 @@ const TEMPLATE_STEPS = [
     .el-badge[data-level='advanced'] {
       color: var(--el-violet);
       border-color: color-mix(in srgb, var(--el-violet) 40%, var(--border-strong));
-    }
-
-    .el-drawer-toggle {
-      margin-left: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border-strong);
-      background: transparent;
-      color: var(--text-muted);
-    }
-
-    .el-drawer-toggle[aria-pressed='true'] {
-      color: var(--el-success);
-      border-color: color-mix(in srgb, var(--el-success) 40%, var(--border-strong));
-    }
-
-    .el-check-ring {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1.5px solid currentColor;
-      display: inline-block;
-    }
-
-    .el-check-mark {
-      color: var(--el-success);
-      font-weight: 700;
     }
 
     .el-drawer-blurb {
@@ -491,7 +452,6 @@ const TEMPLATE_STEPS = [
   `,
 })
 export class ConceptDetail {
-  protected readonly progress = inject(ConceptsProgressService);
   protected readonly steps = TEMPLATE_STEPS;
 
   readonly concept = input.required<EngineeringConcept>();
@@ -509,8 +469,4 @@ export class ConceptDetail {
     const level = this.concept().difficulty;
     return level.charAt(0).toUpperCase() + level.slice(1);
   });
-
-  protected isComplete(): boolean {
-    return this.progress.isCompleted(this.concept().id);
-  }
 }
