@@ -114,6 +114,11 @@ export class ConceptsLibraryPage {
     this.selectedConcept.set(null);
   }
 
+  protected selectConceptById(id: string): void {
+    const found = engineeringConcepts.find((c) => c.id === id);
+    if (found) this.openConcept(found);
+  }
+
   protected clearFilters(): void {
     this.searchTerm.set('');
     this.categoryFilter.set('all');

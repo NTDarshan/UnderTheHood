@@ -93,7 +93,12 @@
   </section>
 
   @if (selectedConcept(); as concept) {
-    <app-concept-detail [concept]="concept" [categoryMeta]="categoryMetaFor(concept.category)" (close)="closeConcept()" />
+    <app-concept-detail
+      [concept]="concept"
+      [categoryMeta]="categoryMetaFor(concept.category)"
+      (close)="closeConcept()"
+      (selectConcept)="selectConceptById($event)"
+    />
   }
 
   <section class="lab-section next-concept">
