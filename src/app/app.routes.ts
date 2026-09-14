@@ -100,6 +100,11 @@ export const routes: Routes = [
     title: 'UnderTheHood — DevOps for Backend Engineers',
   },
   {
+    path: 'explore/crud',
+    loadComponent: () => import('./features/crud/crud-page/crud-page').then((m) => m.CrudPage),
+    title: 'UnderTheHood — CRUD',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),
