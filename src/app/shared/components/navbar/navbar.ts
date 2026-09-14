@@ -1,11 +1,12 @@
 import { Component, HostListener, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Logo } from '../logo/logo';
 import { ScrollToDirective } from '../../directives/scroll-to.directive';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [Logo, ScrollToDirective],
+  imports: [Logo, ScrollToDirective, RouterLink],
   template: `
     <header class="navbar" [class.scrolled]="scrolled()">
       <div class="navbar-inner container">
@@ -16,6 +17,7 @@ import { ScrollToDirective } from '../../directives/scroll-to.directive';
         <nav class="navbar-links" aria-label="Primary">
           <a href="#explore" appScrollTo="explore">Explore</a>
           <a href="#roadmap" appScrollTo="roadmap">Roadmap</a>
+          <a routerLink="/library">Library</a>
           <a href="#about" appScrollTo="about">About</a>
         </nav>
 
@@ -37,6 +39,7 @@ import { ScrollToDirective } from '../../directives/scroll-to.directive';
         <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
           <a href="#explore" appScrollTo="explore" (click)="closeMenu()">Explore</a>
           <a href="#roadmap" appScrollTo="roadmap" (click)="closeMenu()">Roadmap</a>
+          <a routerLink="/library" (click)="closeMenu()">Library</a>
           <a href="#about" appScrollTo="about" (click)="closeMenu()">About</a>
         </nav>
       }

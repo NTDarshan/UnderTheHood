@@ -105,6 +105,14 @@ export const routes: Routes = [
     title: 'UnderTheHood — CRUD',
   },
   {
+    path: 'library',
+    loadComponent: () =>
+      import('./features/concepts-library/concepts-library-page/concepts-library-page').then(
+        (m) => m.ConceptsLibraryPage,
+      ),
+    title: 'UnderTheHood — Engineering Concepts Library',
+  },
+  {
     path: 'explore/:id',
     loadComponent: () =>
       import('./features/coming-soon-page/coming-soon-page').then((m) => m.ComingSoonPage),

@@ -1,0 +1,106 @@
+<div class="page-nav mono">
+  <div class="container page-nav-inner">
+    <a class="back-link" routerLink="/" fragment="roadmap">← Back to Roadmap</a>
+    <span class="crumbs">UnderTheHood / Library</span>
+  </div>
+</div>
+
+<div class="el-scene">
+  <section class="lab-section el-hero">
+    <div class="bg-grid"></div>
+    <div class="container el-hero-inner">
+      <p class="eyebrow">ENGINEERING CONCEPTS LIBRARY</p>
+      <h1 class="lab-title el-hero-title">Small concepts. Big picture.</h1>
+      <p class="lab-lede el-hero-lede">
+        Not everything needs a 40-minute deep dive. Some ideas are small enough to learn in five minutes — but
+        important enough to understand properly.
+      </p>
+
+      <div class="el-stats mono">
+        <div class="el-stat">
+          <span class="el-stat-value">{{ totalCount }}</span>
+          <span class="el-stat-label">Concepts</span>
+        </div>
+        <div class="el-stat">
+          <span class="el-stat-value">{{ progress.completedCount() }}</span>
+          <span class="el-stat-label">Understood</span>
+        </div>
+        <div class="el-stat">
+          <span class="el-stat-value">{{ domainCount }}</span>
+          <span class="el-stat-label">Domains</span>
+        </div>
+      </div>
+
+      <div class="el-progress" role="progressbar" [attr.aria-valuenow]="progress.completedCount()" [attr.aria-valuemax]="totalCount">
+        <div class="el-progress-fill" [style.width.%]="(progress.completedCount() / totalCount) * 100"></div>
+      </div>
+      <p class="el-progress-label mono">{{ progress.completedCount() }} / {{ totalCount }} explored</p>
+    </div>
+  </section>
+
+  <section class="lab-section el-browser">
+    <div class="container">
+      <div class="el-search-row">
+        <div class="el-search">
+          <span class="el-search-icon" aria-hidden="true">⚲</span>
+          <input
+            #searchInput
+            type="text"
+            class="el-search-input"
+            placeholder="Search an engineering concept…"
+            [value]="searchTerm()"
+            (input)="searchTerm.set($any($event.target).value)"
+          />
+          <kbd class="el-search-kbd mono">/</kbd>
+        </div>
+      </div>
+
+      <div class="el-filters">
+        <div class="el-filter-row">
+          <button type="button" class="el-chip" [class.is-active]="categoryFilter() === 'all'" (click)="setCategoryFilter('all')">All</button>
+          @for (cat of categories; track cat.id) {
+            <button type="button" class="el-chip" [class.is-active]="categoryFilter() === cat.id" (click)="setCategoryFilter(cat.id)">
+              {{ cat.label }}
+            </button>
+          }
+        </div>
+        <div class="el-filter-row el-filter-row-status mono">
+          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'all'" (click)="setStatusFilter('all')">All</button>
+          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'not-started'" (click)="setStatusFilter('not-started')">Not Started</button>
+          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'in-progress'" (click)="setStatusFilter('in-progress')">In Progress</button>
+          <button type="button" class="el-chip el-chip-ghost" [class.is-active]="statusFilter() === 'completed'" (click)="setStatusFilter('completed')">Completed</button>
+        </div>
+      </div>
+
+      @if (filteredConcepts().length > 0) {
+        <div class="el-grid">
+          @for (concept of filteredConcepts(); track trackById($index, concept)) {
+            <app-concept-card
+              [concept]="concept"
+              [categoryMeta]="categoryMetaFor(concept.category)"
+              (open)="openConcept(concept)"
+            />
+          }
+        </div>
+      } @else {
+        <div class="el-empty">
+          <p class="el-empty-title">No concepts match that search.</p>
+          <p class="el-empty-hint">Try a different term, or clear your filters.</p>
+          <button type="button" class="lab-btn" (click)="clearFilters()">Clear filters</button>
+        </div>
+      }
+    </div>
+  </section>
+
+  @if (selectedConcept(); as concept) {
+    <app-concept-detail [concept]="concept" [categoryMeta]="categoryMetaFor(concept.category)" (close)="closeConcept()" />
+  }
+
+  <section class="lab-section next-concept">
+    <div class="container next-concept-inner">
+      <a class="prev-link mono is-disabled" aria-disabled="true">← Previous concept</a>
+      <a class="btn btn-ghost" routerLink="/" fragment="roadmap">Roadmap</a>
+      <span class="next-link mono is-disabled" aria-disabled="true">Next concept →</span>
+    </div>
+  </section>
+</div>
