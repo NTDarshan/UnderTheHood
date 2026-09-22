@@ -11,13 +11,14 @@ import {
 } from '../../../data/concepts.data';
 import { ConceptCard } from '../components/concept-card/concept-card';
 import { ConceptDetail } from '../components/concept-detail/concept-detail';
+import { SystemDesignSection } from '../components/system-design-section/system-design-section';
 
 type CategoryFilter = 'all' | ConceptCategory;
 
 @Component({
   selector: 'app-concepts-library-page',
   standalone: true,
-  imports: [RouterLink, ConceptCard, ConceptDetail],
+  imports: [RouterLink, ConceptCard, ConceptDetail, SystemDesignSection],
   templateUrl: './concepts-library-page.html',
   styleUrl: './concepts-library-page.css',
 })
