@@ -15,10 +15,7 @@ import { Component } from '@angular/core';
           built one concept at a time.
         </p>
 
-        <div class="sd-placeholder">
-          <span class="sd-placeholder-dot"></span>
-          <span class="mono sd-placeholder-text">CONTENT ARRIVING SOON</span>
-        </div>
+        <button type="button" class="sd-cta mono" (click)="scrollToIntro()">Start with the introduction ↓</button>
       </div>
     </section>
   `,
@@ -47,30 +44,30 @@ import { Component } from '@angular/core';
       line-height: 1.65;
     }
 
-    .sd-placeholder {
+    .sd-cta {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       margin-top: 32px;
-      padding: 14px 20px;
-      border: 1px dashed var(--border-strong);
+      padding: 12px 20px;
+      border: 1px solid var(--border-strong);
       border-radius: var(--radius-md);
       background: var(--surface);
+      color: var(--sd-accent);
+      font-size: 0.8125rem;
+      letter-spacing: 0.04em;
+      transition: border-color 0.15s ease, background 0.15s ease;
     }
 
-    .sd-placeholder-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--sd-accent);
-      box-shadow: 0 0 8px color-mix(in srgb, var(--sd-accent) 50%, transparent);
-    }
-
-    .sd-placeholder-text {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: var(--text-faint);
+    .sd-cta:hover {
+      border-color: var(--sd-accent);
+      background: var(--surface-elevated);
     }
   `,
 })
-export class SystemDesignSection {}
+export class SystemDesignSection {
+  protected scrollToIntro(): void {
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('sd-why-it-matters')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+}

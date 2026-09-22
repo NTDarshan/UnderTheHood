@@ -11,6 +11,7 @@ import {
 } from '../../../data/concepts.data';
 import { ConceptCard } from '../components/concept-card/concept-card';
 import { ConceptDetail } from '../components/concept-detail/concept-detail';
+import { IntroToSystemDesign } from '../components/intro-to-system-design/intro-to-system-design';
 import { SystemDesignSection } from '../components/system-design-section/system-design-section';
 
 type CategoryFilter = 'all' | ConceptCategory;
@@ -18,7 +19,7 @@ type CategoryFilter = 'all' | ConceptCategory;
 @Component({
   selector: 'app-concepts-library-page',
   standalone: true,
-  imports: [RouterLink, ConceptCard, ConceptDetail, SystemDesignSection],
+  imports: [RouterLink, ConceptCard, ConceptDetail, SystemDesignSection, IntroToSystemDesign],
   templateUrl: './concepts-library-page.html',
   styleUrl: './concepts-library-page.css',
 })
