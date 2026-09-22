@@ -105,6 +105,12 @@ export const routes: Routes = [
     title: 'UnderTheHood — CRUD',
   },
   {
+    path: 'explore/system-design',
+    loadComponent: () =>
+      import('./features/system-design/system-design-page/system-design-page').then((m) => m.SystemDesignPage),
+    title: 'UnderTheHood — System Design',
+  },
+  {
     path: 'library',
     loadComponent: () =>
       import('./features/concepts-library/concepts-library-page/concepts-library-page').then(

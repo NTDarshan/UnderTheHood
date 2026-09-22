@@ -187,6 +187,38 @@
   margin-bottom: 20px;
 }
 
+/* ── Cross-link ───────────────────────────────────────────────────── */
+
+.el-cross-link {
+  border-top-color: var(--border-strong);
+}
+
+.el-cross-link-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.el-cross-link-eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-2);
+  margin-bottom: 8px;
+}
+
+.el-cross-link-title {
+  font-size: 1.5rem;
+}
+
+.el-cross-link-lede {
+  margin-top: 6px;
+  max-width: 480px;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
 /* ── Footer nav ───────────────────────────────────────────────────── */
 
 .next-concept {
